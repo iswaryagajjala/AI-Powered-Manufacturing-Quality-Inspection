@@ -245,29 +245,4 @@ recall on every class.
   review and fed back into retraining data.
 - Model versioning + A/B rollout via the API (`/predict?model_version=`).
 
-## 11. Resume Bullets (only for what's actually implemented)
-- Built an end-to-end multi-class CNN defect-classification system (PyTorch,
-  ResNet18 transfer learning) for industrial surface-inspection images,
-  served via a FastAPI REST API with Pydantic-validated I/O.
-- Designed a reproducible data pipeline (train/val/test split, augmentation,
-  normalization) and automated evaluation reporting precision/recall/F1 and
-  confusion matrices per defect class.
-- Implemented and unit-tested (Pytest) an inference service returning
-  calibrated confidence scores and automated accept/reject decisions,
-  mirroring a production quality-gate workflow.
-- Documented dataset-selection trade-offs (NEU-CLS vs. MVTec AD) and
-  architecture choice (ResNet18 vs. EfficientNet/MobileNet) with a
-  manufacturing-cost framing (precision vs. recall trade-off).
 
-## 12. Sample Interview Questions This Project Prepares You For
-1. Why did you choose transfer learning instead of training a CNN from scratch?
-2. Why ResNet18 instead of a deeper network like ResNet50 or EfficientNet?
-3. How would precision vs. recall trade-offs change your threshold in a
-   real manufacturing REJECT decision?
-4. How would you detect a defect type the model has never seen before
-   (link to MVTec AD / anomaly detection as future work)?
-5. How would you handle class imbalance if one defect type were rare?
-6. How would you monitor for data/model drift once this is deployed on a
-   live production line?
-7. Why FastAPI + Pydantic instead of Flask?
-8. How would you version and roll back a deployed model safely?
